@@ -804,10 +804,10 @@
     @media (max-width: 768px) {
       .floor-tooltip {
         position: fixed;
-        bottom: 20px;
+        top: 50% !important;
         left: 50%;
-        transform: translateX(-50%);
-        top: auto !important;
+        transform: translate(-50%, -50%);
+        bottom: auto !important;
         max-width: 90vw;
         text-align: center;
       }
@@ -1901,11 +1901,11 @@
       tooltip.classList.add('visible');
       
       if (isMobile) {
-        // Fixed position at bottom on mobile
+        // Fixed position in center on mobile
         tooltip.style.left = '50%';
-        tooltip.style.top = 'auto';
-        tooltip.style.bottom = '20px';
-        tooltip.style.transform = 'translateX(-50%)';
+        tooltip.style.top = '50%';
+        tooltip.style.bottom = 'auto';
+        tooltip.style.transform = 'translate(-50%, -50%)';
         tooltip.style.maxWidth = '90vw';
       } else if (e) {
         // Follow cursor on desktop
