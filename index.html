@@ -314,6 +314,60 @@
       transform: translateY(0);
     }
 
+    /* Spotlight over images */
+    .img-spotlight {
+      position: relative;
+    }
+    .img-spotlight::before {
+      content: '';
+      position: absolute;
+      top: -20%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 60%;
+      height: 140%;
+      background: radial-gradient(ellipse at 50% 0%, rgba(255,255,255,0.12) 0%, rgba(255,255,255,0.05) 30%, transparent 60%);
+      pointer-events: none;
+      z-index: 2;
+      opacity: 0;
+      transition: opacity 0.5s ease;
+    }
+    .img-spotlight::after {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 2px;
+      height: 0;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.3), transparent);
+      pointer-events: none;
+      z-index: 3;
+      transition: height 0.4s ease;
+    }
+    .group:hover .img-spotlight::before {
+      opacity: 1;
+    }
+    .group:hover .img-spotlight::after {
+      height: 30px;
+    }
+    
+    /* Always-on subtle spotlight */
+    .img-spotlight-on::before {
+      content: '';
+      position: absolute;
+      top: -10%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80%;
+      height: 120%;
+      background: 
+        radial-gradient(ellipse 100% 50% at 50% 0%, rgba(255,255,255,0.1) 0%, transparent 50%),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 0%, transparent 30%);
+      pointer-events: none;
+      z-index: 2;
+    }
+
     /* Custom select dropdown */
     .custom-select {
       appearance: none;
@@ -541,7 +595,7 @@
       <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-1 stagger-children">
         <!-- Recording Studios -->
         <a href="#apply" class="group bg-black p-8 hover-lift block rounded-xs reveal shine">
-          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs">
+          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs img-spotlight-on img-spotlight">
             <img src="images/11.jpg" 
                  alt="Recording Studio" 
                  class="w-full h-full object-cover cool-img">
@@ -558,7 +612,7 @@
 
         <!-- Podcast Suites -->
         <a href="#apply" class="group bg-black p-8 hover-lift block rounded-xs reveal shine">
-          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs">
+          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs img-spotlight-on img-spotlight">
             <img src="images/12pod.jpeg" 
                  alt="Podcast Studio" 
                  class="w-full h-full object-cover cool-img">
@@ -575,7 +629,7 @@
 
         <!-- Streaming Rooms -->
         <a href="#apply" class="group bg-black p-8 hover-lift block rounded-xs reveal shine">
-          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs">
+          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs img-spotlight-on img-spotlight">
             <img src="images/67cfa69e081bd852466452a9_Craft Content_8922.jpg" 
                  alt="Content Room" 
                  class="w-full h-full object-cover cool-img">
@@ -592,7 +646,7 @@
 
         <!-- Live Rooms -->
         <a href="#apply" class="group bg-black p-8 hover-lift block rounded-xs reveal shine">
-          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs">
+          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs img-spotlight-on img-spotlight">
             <img src="images/67c6111bf5e275c80fc0aaf5_Booth.webp" 
                  alt="Live Room" 
                  class="w-full h-full object-cover cool-img">
@@ -609,7 +663,7 @@
 
         <!-- Creative Offices -->
         <a href="#apply" class="group bg-black p-8 hover-lift block rounded-xs reveal shine">
-          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs">
+          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs img-spotlight-on img-spotlight">
             <img src="images/IMG_4864.jpg" 
                  alt="Creative Office" 
                  class="w-full h-full object-cover cool-img">
@@ -626,7 +680,7 @@
 
         <!-- Member Lounge -->
         <a href="#apply" class="group bg-black p-8 hover-lift block rounded-xs reveal shine">
-          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs">
+          <div class="aspect-[4/3] mb-8 overflow-hidden bg-neutral-900 rounded-xs img-spotlight-on img-spotlight">
             <img src="images/IMG_4859.jpg" 
                  alt="Member Lounge" 
                  class="w-full h-full object-cover cool-img">
@@ -646,7 +700,7 @@
       <div class="mt-1">
         <a href="#apply" class="group bg-black border border-white/5 p-8 md:p-12 hover-lift block rounded-xs reveal-scale shine">
           <div class="grid md:grid-cols-2 gap-12 items-center">
-            <div class="aspect-video overflow-hidden bg-neutral-900 rounded-xs">
+            <div class="aspect-video overflow-hidden bg-neutral-900 rounded-xs img-spotlight-on img-spotlight">
               <img src="images/691cb3272b3b1383585241dd_7.jpg" 
                    alt="Event Space" 
                    class="w-full h-full object-cover cool-img">
