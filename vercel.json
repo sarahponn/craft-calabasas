@@ -1,0 +1,24 @@
+{
+  "redirects": [
+    {
+      "source": "/studios/studio-a",
+      "destination": "/studios/recording",
+      "permanent": true
+    },
+    {
+      "source": "/studios/studio-c",
+      "destination": "/studios/recording",
+      "permanent": true
+    },
+    {
+      "source": "/studios/streaming",
+      "destination": "/streaming",
+      "permanent": true
+    },
+    {
+      "source": "/studios/sound-stage",
+      "destination": "/events",
+      "permanent": true
+    }
+  ]
+}
