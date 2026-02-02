@@ -412,9 +412,9 @@
   <!-- Hero -->
   <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
     <!-- Spotlight effect -->
-    <div id="spotlight" class="pointer-events-none absolute inset-0 z-[1]" style="background: radial-gradient(800px circle at 50% 50%, rgba(255,255,255,0.15), transparent 35%);"></div>
-    <div id="spotlight2" class="pointer-events-none absolute inset-0 z-[1]" style="background: radial-gradient(400px circle at 50% 40%, rgba(255,255,255,0.1), transparent 30%);"></div>
-    <div class="pointer-events-none absolute inset-0 z-[1]" style="background: radial-gradient(1200px circle at 50% 0%, rgba(255,255,255,0.07), transparent 50%);"></div>
+    <div id="spotlight" class="pointer-events-none absolute inset-0 z-[1]" style="background: radial-gradient(700px circle at 50% 50%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 25%, transparent 45%);"></div>
+    <div id="spotlight2" class="pointer-events-none absolute inset-0 z-[1]" style="background: radial-gradient(350px circle at 50% 40%, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, transparent 55%);"></div>
+    <div class="pointer-events-none absolute inset-0 z-[1]" style="background: radial-gradient(1000px circle at 50% 0%, rgba(255,255,255,0.08) 0%, transparent 40%);"></div>
     <!-- Background -->
     <div class="absolute inset-0">
       <img src="images/67c6112d1af9db1fb0d56d53_Lounge.webp" 
@@ -1053,15 +1053,15 @@
       const rect = hero.getBoundingClientRect();
       const x = e.clientX - rect.left;
       const y = e.clientY - rect.top;
-      // Main spotlight follows cursor
-      spotlight.style.background = `radial-gradient(800px circle at ${x}px ${y}px, rgba(255,255,255,0.18), transparent 35%)`;
-      // Secondary spotlight follows with offset for depth
-      spotlight2.style.background = `radial-gradient(500px circle at ${x * 0.9}px ${y * 0.9}px, rgba(255,255,255,0.12), transparent 30%)`;
+      // Main spotlight follows cursor - sharp edge
+      spotlight.style.background = `radial-gradient(700px circle at ${x}px ${y}px, rgba(255,255,255,0.22) 0%, rgba(255,255,255,0.1) 20%, transparent 40%)`;
+      // Secondary spotlight follows with offset - tight beam
+      spotlight2.style.background = `radial-gradient(350px circle at ${x * 0.95}px ${y * 0.95}px, rgba(255,255,255,0.18) 0%, rgba(255,255,255,0.06) 35%, transparent 50%)`;
     });
     
     hero.addEventListener('mouseleave', () => {
-      spotlight.style.background = `radial-gradient(800px circle at 50% 50%, rgba(255,255,255,0.15), transparent 35%)`;
-      spotlight2.style.background = `radial-gradient(400px circle at 50% 40%, rgba(255,255,255,0.1), transparent 30%)`;
+      spotlight.style.background = `radial-gradient(700px circle at 50% 50%, rgba(255,255,255,0.2) 0%, rgba(255,255,255,0.08) 25%, transparent 45%)`;
+      spotlight2.style.background = `radial-gradient(350px circle at 50% 40%, rgba(255,255,255,0.15) 0%, rgba(255,255,255,0.05) 40%, transparent 55%)`;
     });
     
     // Magnetic button effect
