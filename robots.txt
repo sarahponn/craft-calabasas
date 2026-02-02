@@ -1,0 +1,14 @@
+# robots.txt for Craft Calabasas
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://craftcalabasas.com/sitemap.xml
+
+# Google
+User-agent: Googlebot
+Allow: /
+
+# Bing
+User-agent: Bingbot
+Allow: /
