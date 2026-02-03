@@ -1644,6 +1644,9 @@
                  class="w-full px-5 py-4 bg-transparent border border-white/10 font-mono text-sm focus:outline-none focus:border-white/30 transition-colors placeholder:text-neutral-700 rounded-xs"
                  placeholder="Email">
         </div>
+        <input type="tel" name="phone"
+               class="w-full px-5 py-4 bg-transparent border border-white/10 font-mono text-sm focus:outline-none focus:border-white/30 transition-colors placeholder:text-neutral-700 rounded-xs"
+               placeholder="Phone (optional — for faster response)">
         <select name="interest" required
                 class="w-full px-5 py-4 bg-black border border-white/10 font-mono text-sm focus:outline-none focus:border-white/30 transition-colors custom-select rounded-xs text-neutral-500">
           <option value="" disabled selected>I'm interested in...</option>
@@ -1785,6 +1788,7 @@
       const formData = {
         name: form.name.value,
         email: form.email.value,
+        phone: form.phone.value || '',
         interest: form.interest.value,
         submitted_at: new Date().toISOString(),
         source: 'craftcalabasas.com'
